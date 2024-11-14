@@ -1,0 +1,7 @@
+{
+  "name": "appMas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

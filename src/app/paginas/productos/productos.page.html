@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="colorboton1">
+    <ion-title>Productos</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="principal"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="servG.irA('/producto/0')">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="CargarProductos()">
+        <ion-icon name="refresh"></ion-icon>
+      </ion-button>
+      <ion-button (click)="verCarrito()">
+        <ion-icon name="cart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card class="card-container" *ngFor="let producto of productos">
+      <div class="image-container">
+        <img [src]="servG.imagenUrl(producto.prod_imagen)">
+      </div>
+      <ion-card-header>
+        <ion-card-title>{{producto.prod_nombre}}</ion-card-title>
+        <ion-card-subtitle>CODIGO:{{producto.prod_codigo}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Precio:</strong> ${{producto.prod_precio}}</p>
+        <p><strong>Stock:</strong> {{producto.prod_stock}}</p>
+      </ion-card-content>
+      <ion-buttons>
+        <ion-button fill="outline" expand="block" (click)="fun_Editar(producto.prod_id)">
+          <ion-icon name="create"></ion-icon>Editar
+        </ion-button>
+        <ion-button fill="outline" expand="block" (click)="fun_Eliminar(producto.prod_id)">
+          <ion-icon name="trash"></ion-icon>Eliminar
+        </ion-button>
+        <ion-button fill="solid" expand="block" (click)="agregarAlCarrito(producto)">
+          <ion-icon name="cart"></ion-icon>Añadir al carrito
+        </ion-button>
+      </ion-buttons>
+    </ion-card>
+  </ion-list>
+</ion-content>
