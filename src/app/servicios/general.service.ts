@@ -7,8 +7,8 @@ import { ToastController } from '@ionic/angular';
 })
 export class GeneralService {
 
-  public URLAPI: string = "https://apiprueba-1c17.onrender.com/api/";
-  public URLSERV: string = "https://apiprueba-1c17.onrender.com";
+  public URLAPI: string = "https://apiprueba-4fqk.onrender.com/api/";
+  public URLSERV: string = "https://apiprueba-4fqk.onrender.com";
 
   /*
   public URLAPI:string="http://localhost:3000/api/";
